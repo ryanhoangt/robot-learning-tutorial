@@ -1,0 +1,29 @@
+{
+    // Use latexmk with shell-escape (needed by minted)
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk-shellescape",
+        "command": "latexmk",
+        "args": [
+          "-pdf",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-shell-escape",
+          "%DOC%"
+        ]
+      }
+    ],
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk (shell escape)",
+        "tools": ["latexmk-shellescape"]
+      }
+    ],
+    // Rebuild automatically when you save a .tex file
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    // Show the PDF in a VS Code tab (change to "external" if you prefer system viewer)
+    "latex-workshop.view.pdf.viewer": "tab",
+    // Optional: enable forward/inverse search via SyncTeX
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.synctex.synctexjs.enabled": true
+  }
